@@ -1,4 +1,4 @@
-# nightfury-nuxt
+# codename:nightfury-nuxt
 
 ## Build Setup
 
