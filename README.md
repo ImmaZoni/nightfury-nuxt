@@ -1,5 +1,6 @@
 # Nightfury-Nuxt
-
+[![Version](https://badge.fury.io/gh/tterb%2FHyde.svg)](https://badge.fury.io/gh/tterb%2FHyde)
+[![GitHub Release](https://img.shields.io/github/release/tterb/PlayMusic.svg?style=flat)]()  
 **This is the private in development repository for The Circle of Life Animal Sanctuary**
 
 ### Built With
