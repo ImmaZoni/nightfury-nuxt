@@ -23,6 +23,14 @@ We would like to focus user interaction to as many individuals as possible with 
 * Optional dyslexic friendly font
 * Optional 
 
+wish list for needed expansion items
+animal supplies
+video equipment (gopros etc)
+
+
+
+
+
 
 ## Build Setup
 
