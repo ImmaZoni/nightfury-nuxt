@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <Navigation />
+    <Navigation2 />
       <v-main>
         <v-container>
           <nuxt />
@@ -11,7 +11,16 @@
     </div>
   </v-app>
 </template>
-
+<style>
+a.nuxt-link-exact-active {
+  font-weight: bold;
+  color: #ffffff;
+}
+.router-link {
+  display: inline-block;
+  text-decoration: none;
+}
+</style>
 <script>
 export default {
   data () {

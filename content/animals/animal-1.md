@@ -26,6 +26,6 @@ This is some more info
 
 This is some more info
 
-## This is another heading
+## This is anothe
 
-This is some more info
+This is some more inf

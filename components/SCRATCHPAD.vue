@@ -1,0 +1,547 @@
+<template>
+  <v-footer
+    dark
+    padless
+  >
+    <v-container>
+        <v-row no-gutters>
+          <v-col
+            v-for="n in 3"
+            :key="n"
+            cols="12"
+            sm="4"
+          >
+            <v-card
+              class="pa-2"
+              outlined
+              tile
+            >
+              One of three columns
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <v-card
+      flat
+      tile
+      class="flex green white--text text-center"
+    >
+
+      <v-card>
+        <Guidestar />
+      </v->
+      
+      <v-card-text>
+        <v-btn
+          v-for="icon in icons"
+          :key="icon"
+          class="mx-4 white--text"
+          icon
+        >
+          <v-icon size="24px">
+            {{ icon }}
+          </v-icon>
+        </v-btn>
+      </v-card-text>
+
+      <v-card-text class="white--text pt-0">
+        Help us Make a Difference!
+      </v-card-text>
+      <v-card-text class="white--text">
+        {{ new Date().getFullYear() }} — <strong>Circle of Life Animal Sanctuary</strong> - Phoenix, Arizona
+      </v-card-text>
+    </v-card>
+  </v-footer>
+
+
+
+  export default {
+    data: () => ({
+      icons: [
+        'mdi-facebook',
+        'mdi-twitter',
+        'mdi-linkedin',
+        'mdi-instagram',
+      ],
+    }),
+  }
+
+
+
+
+
+
+
+<div id="app">
+  <v-app id="inspire">
+    <v-layout row justify-center>
+      <v-toolbar app dark color="blue-grey darken-1" class="hidden-xs-and-down">
+        <v-spacer></v-spacer>
+        <v-toolbar-items>
+         <v-btn
+           v-for="item in nav"
+           :key="item.icon"
+           to="#"
+           :title="item.title"
+           flat
+         >{{ item.text }}</v-btn>
+        </v-toolbar-items>
+      </v-toolbar>
+      
+      <v-toolbar app dark color="blue-grey darken-3" class="hidden-sm-and-up">
+        <v-toolbar-title>Mobile Menu</v-toolbar-title>
+        <v-spacer></v-spacer>
+
+        <v-dialog v-model="dialog" fullscreen hide-overlay transition="dialog-bottom-transition">
+          <v-toolbar-side-icon dark slot="activator"></v-toolbar-side-icon>
+          <v-card>
+            <v-toolbar flat color="blue-grey darken-2">
+              <v-toolbar-title>Mobile Menu</v-toolbar-title>
+              <v-spacer></v-spacer>
+              <v-btn icon @click.native="dialog = false">
+                <v-icon>close</v-icon>
+              </v-btn>
+            </v-toolbar>
+
+            <v-list>
+              <v-list-tile
+                v-for="(item, index) in nav"
+                :key="index"
+                to="#"
+              >
+                <v-list-tile-action>
+                  <v-icon v-if="item.icon">{{item.icon}}</v-icon>
+                </v-list-tile-action>
+                <v-list-tile-content>
+                  <v-list-tile-title :title="item.title">{{ item.text }}</v-list-tile-title>
+                </v-list-tile-content>
+              </v-list-tile>
+            </v-list>
+          </v-card>
+        </v-dialog>
+
+      </v-toolbar>
+      
+      <v-container fluid>
+        <v-slide-y-transition mode="out-in">
+          <v-layout column align-center>
+            <h1 class="display-1">Vuetify Desktop / Mobile navbar example</h1>
+            <p>
+              A quick demo of how to combine a desktop navigation and a 
+              mobile overlay (dialog) navigation menu.
+            </p>
+            <p>
+              Resize the window to see the navbar change to mobile version.
+            </p>
+            <p>
+              My deep gratitude towards the VueJS and Vuetify team!
+            </p>
+          </v-layout>
+        </v-slide-y-transition>
+      </v-container>
+    </v-layout>
+  </v-app>
+</div>
+
+new Vue({
+  el: '#app',
+  data () {
+    return {
+      dialog: false,
+      nav: [
+        {
+          icon: 'home',
+          text: 'Home',
+          title: 'Back to Home page',
+          active: true,
+          link: '/'
+        },
+        {
+          icon: '',
+          text: 'Make a Difference',
+          title: 'Learn how to help make a difference',
+          active: false,
+          link: '/Make-A-Difference'
+
+        },
+        {
+          icon: 'assignment_turned_in',
+          text: 'Sanctuary',
+          title: 'About our Sanctuary',
+          active: true,
+          link: '/Sanctuary'
+         
+        },
+        {
+          icon: 'email',
+          text: 'Contact',
+          title: 'Our Contact info',
+          active: false
+        }
+      ]
+    }
+  }
+})
+
+
+
+
+
+
+<template>
+    <v-navigation-drawer
+      app
+      clipped
+      permanent
+      mini-variant
+      expand-on-hover>
+      <!-- -->
+
+      <v-list nav dense>
+       <div v-for="(link, i) in links" :key="i">
+
+        <v-list-item
+            v-if="!link.subLinks"
+            :to="link.to"
+            :active-class="color"
+            avatar
+            class="v-list-item"
+        >
+            <v-list-item-icon>
+                <v-icon>{{ link.icon }}</v-icon>
+            </v-list-item-icon>
+
+            <v-list-item-title v-text="link.text" />
+        </v-list-item>
+
+        <v-list-group
+            v-else
+            :key="link.text"
+            no-action
+            :prepend-icon="link.icon"
+            :value="false"
+        >
+            <template v-slot:activator>
+              <v-list-item-title>{{ link.text }}</v-list-item-title>
+             </template>
+
+            <v-list-item
+                v-for="sublink in link.subLinks"
+                :to="sublink.to"
+                :key="sublink.text"
+            >
+                <v-list-item-icon>
+                  <v-icon>{{ sublink.icon }}</v-icon>
+                </v-list-item-icon>
+                <v-list-item-title>{{ sublink.text }}</v-list-item-title>
+
+            </v-list-item>
+
+        </v-list-group>
+
+    </div>
+
+      </v-list>
+
+    </v-navigation-drawer>
+</template>
+
+
+
+
+
+
+
+
+
+
+<script>
+export default {
+  data: () => ({
+links: [
+    {
+        to: '/',
+        icon: 'mdi-home',
+        text: '',
+        title: 'Webpage home'
+    },
+    {
+        icon: 'mdi-folder',
+        text: 'Make a Difference',
+        title: 'How to make a difference',
+        subLinks: [
+            {
+                to: '/Adopt',
+                icon: '',
+                text: 'Adopt',
+                title: 'Adopt an Animal'
+            },
+            {
+                to    : '/Foster',
+                icon  : '',
+                text : 'Foster',
+                title: 'Foster an Animal'
+            },
+        ]
+    },
+    {
+        icon: 'mdi-folder',
+        text: 'Care & Rescue',
+        title: 'Care & Rescue resources',
+        subLinks: [
+            {
+                to: '/Resources',
+                icon: '',
+                text: 'Resources',
+                title: 'Various helpful resources'
+            },
+            {
+                to    : '/Information',
+                icon  : '',
+                text : 'Information',
+                title: 'Animal Information'
+            },
+        ]
+    },
+    {
+        icon: 'mdi-folder',
+        text: 'Sanctuary',
+        title: 'Our Sanctuary',
+        subLinks: [
+            {
+                to: '/Animals',
+                icon: '',
+                text: 'Animals',
+                title: 'Our Animals'
+            },
+            {
+                to    : '/About-Us',
+                icon  : '',
+                text : 'About Us',
+                title: 'About Our Sanctuary'
+            },
+        ]
+    },
+    {
+        to: '/Blog',
+        icon: 'mdi-folder',
+        text: 'Blog',
+        title: 'Our blog'
+    },
+    {
+        to: '<a href="https://www.facebook.com" target+"_blank">',
+        icon: 'mdi-email',
+        text: '',
+        title: 'Email-Us'
+    },
+    {
+        to: '<a href="https://www.facebook.com" target+"_blank">',
+        icon: 'mdi-facebook',
+        text: '',
+        title: 'Facebook'
+    },
+    {
+        to: '<a href="https://www.facebook.com" target+"_blank">',
+        icon: 'mdi-twitter',
+        text: '',
+        title: 'Twitter'
+    },
+    {
+        to: '<a href="https://www.facebook.com" target+"_blank">',
+        icon: 'mdi-Instagram',
+        text: '',
+        title: 'Instagram'
+    },
+
+]
+  })
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+<template>
+    <v-navigation-drawer
+      app
+      clipped
+      permanent
+      mini-variant
+      expand-on-hover>
+      <!-- -->
+
+      <v-list nav dense>
+       <div v-for="(link, i) in links" :key="i">
+        
+        <v-list-item
+            v-if="!link.subLinks"
+            :to="link.to"
+            :active-class="color"
+            avatar
+            class="v-list-item"
+        >
+            <v-list-item-icon>
+                <v-icon>{{ link.icon }}</v-icon>
+            </v-list-item-icon>
+
+            <v-list-item-title v-text="link.text" />
+        </v-list-item>
+
+        <v-list-group
+            v-else
+            :key="link.text"
+            no-action
+            :prepend-icon="link.icon"
+            :value="false"
+        >
+            <template v-slot:activator>
+              <v-list-item-title>{{ link.text }}</v-list-item-title>
+             </template>
+
+            <v-list-item
+                v-for="sublink in link.subLinks"
+                :to="sublink.to"
+                :key="sublink.text"
+            >
+                <v-list-item-icon>
+                  <v-icon>{{ sublink.icon }}</v-icon>
+                </v-list-item-icon>
+                <v-list-item-title>{{ sublink.text }}</v-list-item-title>
+
+            </v-list-item>
+        </v-list-group>
+    </div>
+
+      </v-list>
+    </v-navigation-drawer>
+</template>
+
+<script>
+export default {
+  data: () => ({
+links: [
+    {
+        to: '/',
+        icon: 'mdi-home',
+        text: '',
+        title: 'Webpage home'
+    },
+    {
+        icon: 'mdi-folder',
+        text: 'Make a Difference',
+        title: 'How to make a difference',
+        subLinks: [
+            {
+                to: '/Adopt',
+                icon: '',
+                text: 'Adopt',
+                title: 'Adopt an Animal'
+            },
+            {
+                to    : '/Foster',
+                icon  : '',
+                text : 'Foster',
+                title: 'Foster an Animal'
+            },
+        ]
+    },
+    {
+        icon: 'mdi-folder',
+        text: 'Care & Rescue',
+        title: 'Care & Rescue resources',
+        subLinks: [
+            {
+                to: '/Resources',
+                icon: '',
+                text: 'Resources',
+                title: 'Various helpful resources'
+            },
+            {
+                to    : '/Information',
+                icon  : '',
+                text : 'Information',
+                title: 'Animal Information'
+            },
+        ]
+    },
+    {
+        icon: 'mdi-folder',
+        text: 'Sanctuary',
+        title: 'Our Sanctuary',
+        subLinks: [
+            {
+                to: '/Animals',
+                icon: '',
+                text: 'Animals',
+                title: 'Our Animals'
+            },
+            {
+                to    : '/About-Us',
+                icon  : '',
+                text : 'About Us',
+                title: 'About Our Sanctuary'
+            },
+        ]
+    },
+    {
+        to: '/Blog',
+        icon: 'mdi-folder',
+        text: 'Blog',
+        title: 'Our blog'
+    },
+    {
+        href: 'https://www.facebook.com',
+        icon: 'mdi-email',
+        text: '',
+        title: 'Email-Us'
+    },
+    {
+        href: 'https://www.facebook.com',
+        icon: 'mdi-facebook',
+        text: '',
+        title: 'Facebook'
+    },
+    {
+        href: 'https://www.twitter.com',
+        icon: 'mdi-twitter',
+        text: '',
+        title: 'Twitter'
+    },
+    {
+        href: 'https://wwww.instagram.com',
+        icon: 'mdi-Instagram',
+        text: '',
+        title: 'Instagram'
+    },
+]
+  })
+}
+</script>
