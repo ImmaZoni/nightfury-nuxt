@@ -1,9 +1,9 @@
 <template>
-  <v-container >
+  <v-app-bar>
     <v-row class="justify-center align-center" no-gutters>
             <v-col class="d-inline-flex justify-start">
               <v-btn nuxt icon>
-                <nuxt-link to="/">
+                <nuxt-link to="/" style="text-decoration: none;">
                   <v-icon>
                     mdi-home
                   </v-icon>
@@ -50,7 +50,8 @@
               </v-btn>
           </v-col>
     </v-row>
-  </v-container>      
+    
+  </v-app-bar>      
 </template>
 <style>
 

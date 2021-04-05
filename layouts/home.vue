@@ -1,9 +1,12 @@
 <template>
 <v-app>
-  <v-app-bar dark>
+  <v-app-bar fixed dark>
       <Navigation />
   </v-app-bar>  
       <v-main>
+        <v-img
+            contain
+            src="/Hero-Logo.svg"></v-img>
         <Nuxt />
         <v-spacer></v-spacer>
         <Footer />  

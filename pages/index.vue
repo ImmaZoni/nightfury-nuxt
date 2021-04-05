@@ -1,5 +1,6 @@
 <template>
   <v-row class="d-flex justify-center">
+    
     <v-col cols="12" sm="8" md="6">
       
       <p>
@@ -34,15 +35,20 @@ Privacy Policy
     </v-col>
   </v-row>
 </template>
-
+<style>
+.nuxt-link {
+  color: aliceblue;
+}
+.nuxt-link-active {
+  color: red;
+}
+</style>
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
-
 export default {
-  components: {
-    Logo,
-    VuetifyLogo
+  layout: 'home',
+  // OR
+  layout (context) {
+    return 'home'
   }
 }
 </script>
