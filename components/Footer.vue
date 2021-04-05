@@ -1,10 +1,12 @@
 <template>
   <v-footer
     dark
-    padless
+    paddless
+    absolute
+    
   >
     <v-container>
-        <v-row>
+        <v-row class=" justify-center align-center">
           <v-col>
             <a href="https://www.guidestar.org/profile/85-2416081" target="_blank"><img src="https://widgets.guidestar.org/gximage2?o=9914464&l=v4" /></a>
           </v-col>

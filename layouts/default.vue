@@ -1,49 +1,32 @@
 <template>
-  <v-app>
-    <Navigation2 />
+<v-app>
+  <v-app-bar dark>
+      <Navigation />
+  </v-app-bar>  
       <v-main>
         <v-container>
-          <nuxt />
+          <Nuxt />
         </v-container>
-      </v-main>
-    <div>
-      <Footer />
-    </div>
-  </v-app>
+        <v-spacer></v-spacer>
+        <Footer />  
+      </v-main>  
+</v-app>
 </template>
+
+
 <style>
-a.nuxt-link-exact-active {
-  font-weight: bold;
-  color: #ffffff;
-}
-.router-link {
-  display: inline-block;
-  text-decoration: none;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
 }
 </style>
 <script>
 export default {
   data () {
     return {
-      clipped: false,
-      drawer: false,
-      fixed: false,
-      items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/'
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
-        }
-      ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js'
     }
   }
 }

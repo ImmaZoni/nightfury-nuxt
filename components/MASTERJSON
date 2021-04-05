@@ -1,35 +1,4 @@
-<template>
-    <v-layout justify-center>
-        <v-toolbar app dark class="hidden-xs-and-down">
-            <v-spacer></v-spacer>
-            <v-toolbar-items>
-                <v-btn nuxt icon>
-                    <nuxt-link to="/">
-                        <v-icon>
-                            mdi-home
-                        </v-icon>
-                    </nuxt-link>
-                </v-btn>
-                <v-btn
-                    plain
-                    v-for="link in links"
-                    :key="link.text"
-                    :to="link.to"
-                >
-                        {{ link.text }}
-                </v-btn>
-                <v-btn
-                    plain
-                    
-                    >
-                </v-btn>
-            </v-toolbar-items>
-        </v-toolbar>
-    </v-layout>
-</template>
-<script>
-export default {
-    data: () => ({
+ data: () => ({
         links: [
         {
             text: '',
@@ -125,4 +94,3 @@ export default {
         ]
     })
 }
-</script>
