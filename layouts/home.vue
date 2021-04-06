@@ -1,14 +1,11 @@
 <template>
-<v-app>
-  <v-app-bar fixed dark>
-      <Navigation />
-  </v-app-bar>  
+<v-app> 
       <v-main>
-        <v-img
-            contain
-            src="/Hero-Logo.svg"></v-img>
+        <Navigation />
+        <Hero />
+        <v-container></v-container>
         <Nuxt />
-        <v-spacer></v-spacer>
+        <v-container></v-container>
         <Footer />  
       </v-main>  
 </v-app>
