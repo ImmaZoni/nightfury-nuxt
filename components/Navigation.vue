@@ -1,9 +1,9 @@
 <template>
-  <v-container >
+  <v-app-bar fixed dark>
     <v-row class="justify-center align-center" no-gutters>
             <v-col class="d-inline-flex justify-start">
               <v-btn nuxt icon>
-                <nuxt-link to="/">
+                <nuxt-link to="/" style="text-decoration: none;">
                   <v-icon>
                     mdi-home
                   </v-icon>
@@ -12,19 +12,19 @@
             </v-col>
             <v-col class="d-inline-flex">
               <v-btn nuxt text >
-                <nuxt-link to="/Animals" style="text-decoration: none;">Adopt & Foster</nuxt-link>
+                <nuxt-link to="/animals" style="text-decoration: none;">Adopt & Foster</nuxt-link>
               </v-btn> 
               <v-btn nuxt text>        
-                <nuxt-link to="/Care&Rescue" style="text-decoration: none;">Care & Rescue</nuxt-link>
+                <nuxt-link to="/care&rescue" style="text-decoration: none;">Care & Rescue</nuxt-link>
               </v-btn>
               <v-btn nuxt text>        
-                <nuxt-link to="/Sanctuary" style="text-decoration: none;">Sanctuary</nuxt-link>    
+                <nuxt-link to="/sanctuary" style="text-decoration: none;">Sanctuary</nuxt-link>    
               </v-btn>
               <v-btn nuxt text>      
-                <nuxt-link to="/Donate" style="text-decoration: none;">Donate</nuxt-link>         
+                <nuxt-link to="/donate" style="text-decoration: none;">Donate</nuxt-link>         
               </v-btn>
               <v-btn nuxt text> 
-                <nuxt-link to="/Blog" style="text-decoration: none;">Blog</nuxt-link>
+                <nuxt-link to="/blog" style="text-decoration: none;">Blog</nuxt-link>
               </v-btn>
             </v-col>
             <v-col class="d-inline-flex justify-end">
@@ -50,7 +50,8 @@
               </v-btn>
           </v-col>
     </v-row>
-  </v-container>      
+    
+  </v-app-bar>      
 </template>
 <style>
 
