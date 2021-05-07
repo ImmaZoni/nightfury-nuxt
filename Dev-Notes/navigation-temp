@@ -1,7 +1,6 @@
 <template>
   <v-app-bar fixed dark>
-    <v-row class="align-center">
-      <v-toolbar app>
+    <v-row class="justify-center align-center" no-gutters>
             <v-col class="d-inline-flex justify-start">
               <v-btn nuxt icon>
                 <nuxt-link to="/" style="text-decoration: none;">
@@ -11,41 +10,38 @@
                 </nuxt-link>
               </v-btn>
             </v-col>
-            <v-col class="align-start">
-                <v-list nav tile class="d-flex align-start">
-                    <div v-for="(link, i) in links" :key="i">
-                        <v-list-item
-                            v-if="!link.subLinks"
-                            :to="link.to"
-                            class="v-list-item"
-                        >
+            <v-col class="d-inline-flex"
+                v-for="(link, i) in links" :key="i"
+                >
+                <v-btn
+                    nuxt
+                    text
+                    v-if="!link.subLinks"
+                    >
+                    <nuxt-link :to="link.to" style="text-decoration: none;">{{ link.text }}</nuxt-link>
+                </v-btn>
+                <v-list-group
+                    v-else
+                    :key="link.text"
+                    no-action
+                    :value="false"
+                    >
+                    <template v-slot:activator>
+                        <v-btn
+                            dark
+                            v-bind="attrs"
+                            v-on="on"
+                            >{{ link.text }}
+                        </v-btn>
+                    </template>
 
-                            <v-list-item-title v-text="link.text" />
-                        </v-list-item>
-                        <v-list-group
-                            v-else
-                            :key="link.text"
-                            sub-group
-                            no-action
-                            :value="false"
+                    <v-list-item
+                        v-for="(subLink, text) in subLinks"
+                        :key="subLink.text"
                         >
-                            <template v-slot:activator>
-                            <v-list-item-title >{{ link.text }}</v-list-item-title>
-                            </template>
-                            <v-list-item
-                                v-for="sublink in link.subLinks"
-                                :to="sublink.to"
-                                :key="sublink.text"
-                            >
-                                <v-list-item-icon>
-                                <v-icon>{{ sublink.icon }}</v-icon>
-                                </v-list-item-icon>
-                                <v-list-item-title>{{ sublink.text }}</v-list-item-title>
-
-                            </v-list-item>
-                        </v-list-group>
-                    </div>
-                </v-list>
+                        <nuxt-link :to="link.to" style="text-decoration: none;">{{ link.text }}</nuxt-link>
+                    </v-list-item>
+                </v-list-group>
             </v-col>
             <v-col class="d-inline-flex justify-end">
               <v-btn nuxt icon href="mailto:admin@thecircleoflifesanctuary.org" target="_blank">
@@ -69,11 +65,11 @@
                     </v-icon>
               </v-btn>
           </v-col>
-      </v-toolbar>
     </v-row>
   </v-app-bar>      
 </template>
 <style>
+
 </style>
 <script>
 export default {

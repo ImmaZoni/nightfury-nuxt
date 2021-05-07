@@ -1,7 +1,7 @@
 <template>
 <v-app> 
       <v-main>
-        <Navigation />
+        <Navigation-inprogress />
         <Hero />
         <v-container></v-container>
         <Nuxt />

@@ -1,7 +1,7 @@
 <template>
 <v-app>
   <v-app-bar dark>
-      <Navigation />
+      <Navigation-inprogress />
   </v-app-bar>  
       <v-main>
         <Nuxt />

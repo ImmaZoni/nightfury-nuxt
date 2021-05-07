@@ -1,9 +1,6 @@
 <template>
   <v-footer
     dark
-    paddless
-    absolute
-    
   >
     <v-container>
         <v-row class="justify-center align-center">
@@ -11,8 +8,9 @@
             <a href="https://www.guidestar.org/profile/85-2416081" target="_blank"><img src="https://widgets.guidestar.org/gximage2?o=9914464&l=v4" /></a>
           </v-col>
           <v-col>
-            <v-card-text class="white--text">
-              {{ new Date().getFullYear() }} — <strong>Circle of Life Animal Sanctuary</strong> - Phoenix, Arizona
+            <v-card-text class="white--text text-center">
+              <strong>Circle of Life Animal Sanctuary</strong>
+               <p>Phoenix, Arizona - {{ new Date().getFullYear() }}</p>
             </v-card-text>
           </v-col>
           <v-col>

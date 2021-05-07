@@ -1,7 +1,6 @@
 <template>
   <v-app-bar fixed dark>
-    <v-row class="align-center">
-      <v-toolbar app>
+    <v-row class="justify-center align-center">
             <v-col class="d-inline-flex justify-start">
               <v-btn nuxt icon>
                 <nuxt-link to="/" style="text-decoration: none;">
@@ -11,8 +10,8 @@
                 </nuxt-link>
               </v-btn>
             </v-col>
-            <v-col class="align-start">
-                <v-list nav tile class="d-flex align-start">
+            <v-col class="">
+                <v-list nav tile class="d-flex align-center">
                     <div v-for="(link, i) in links" :key="i">
                         <v-list-item
                             v-if="!link.subLinks"
@@ -69,7 +68,6 @@
                     </v-icon>
               </v-btn>
           </v-col>
-      </v-toolbar>
     </v-row>
   </v-app-bar>      
 </template>
