@@ -1,11 +1,11 @@
 <template>
-<v-app>
-  <v-app-bar dark>
-      <Navigation-inprogress />
-  </v-app-bar>  
+<v-app> 
       <v-main>
+        <Navigation-inprogress />
+        <Hero />
+        <v-container></v-container>
         <Nuxt />
-        <v-spacer></v-spacer>
+        <v-container></v-container>
         <Footer />  
       </v-main>  
 </v-app>

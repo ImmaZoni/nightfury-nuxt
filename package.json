@@ -1,6 +1,6 @@
 {
   "name": "nightfury-nuxt",
-  "version": "1.0.0",
+  "version": "0.0.3",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -12,6 +12,7 @@
     "@nuxt/content": "^1.14.0",
     "@nuxtjs/pwa": "^3.3.5",
     "core-js": "^3.8.3",
+    "luxon": "^1.26.0",
     "nuxt": "^2.14.12"
   },
   "devDependencies": {

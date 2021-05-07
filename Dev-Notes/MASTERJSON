@@ -1,0 +1,96 @@
+ data: () => ({
+        links: [
+        {
+            text: '',
+            sub: 'Webpage Home',
+            icon: 'mdi-home',
+            to: '/'
+        },
+        {
+            text: 'Make a Difference',
+            sub: 'How to Make a Difference',
+            icon: 'mdi-folder',
+            subLinks: [
+            {
+                text: 'Adopt',
+                sub: 'Adopt an Animal',
+                icon: '',
+                to: '/Adopt'
+            },
+            {
+                text: 'Foster',
+                sub: 'Foster an Animal',
+                icon: '',
+                to: '/Foster' 
+            },
+            ]
+        },
+        {
+            text: 'Care & Rescue',
+            sub: 'Care and rescue resources',
+            icon: 'mdi-folder',
+            subLinks: [
+            {
+                text: 'Resources',
+                sub: 'Various helpful resources',
+                icon: '',
+                to: '/Resources'
+            },
+            {
+                text: 'Information',
+                sub: 'Animal Information',
+                icon: '',
+                to: '/Information'
+            },
+            ]
+        },
+        {
+            text: 'Sanctuary',
+            sub: 'Our Sanctuary',
+            icon: 'mdi-folder',
+            subLinks: [
+            {
+                text: 'Animals',
+                sub: 'Our Animals',
+                icon: '',
+                to: '/Animals'
+            },
+            {
+                text: 'About Us',
+                sub: 'About Our Sanctuary',
+                icon: '',
+                to: '/About-Us' 
+            },
+            ]
+        },
+        {
+            text: 'Blog',
+            sub: 'Our Sanctuary',
+            icon: 'mdi-blog',
+            to: '/Blog'
+        }
+        ],
+        urls: [
+        {
+            sub: 'Email Us',
+            icon: 'mdi-email',
+            href: 'https://www.Test.com'
+        },
+        {
+            sub: 'Facebook',
+            icon: 'mdi-facebook',
+            href: 'https://www.facebook.com'
+        },
+        {
+            sub: 'Twitter',
+            icon: 'mdi-twitter',
+            href: 'https://www.twitter.com'
+        },
+        {
+            sub: 'Instagram',
+            icon: 'mdi-instagram',
+            href: 'https://www.instagram.com'
+        },
+        ]
+    })
+}

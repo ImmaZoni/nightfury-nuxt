@@ -1,89 +1,49 @@
 <template>
-  <v-row justify="center" align="center">
+  <v-row class="d-flex justify-center">
     <v-col cols="12" sm="8" md="6">
-      <div class="text-center">
-        <logo />
-        <vuetify-logo />
-      </div>
-      <v-card>
-        <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
-        </v-card-title>
-        <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>
-            For more information on Vuetify, check out the <a
-              href="https://vuetifyjs.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              documentation
-            </a>.
-          </p>
-          <p>
-            If you have questions, please join the official <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="chat"
-            >
-              discord
-            </a>.
-          </p>
-          <p>
-            Find a bug? Report it on the github <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="contribute"
-            >
-              issue board
-            </a>.
-          </p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
-          <hr class="my-3">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt Documentation
-          </a>
-          <br>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt GitHub
-          </a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn
-            color="primary"
-            nuxt
-            to="/inspire"
-          >
-            Continue
-          </v-btn>
-        </v-card-actions>
-      </v-card>
+      <!--- About Us -->
+      <v-container class="d-inline justify-center">
+        <h1 class="text-center">A Little About Us</h1>
+        <p class="text-center">We are an up and coming animal sanctuary based in Phoenix, Arizona striving to help all the animals we can. We are currently working with a limited capacity, but will continue to help every animal in any way possible. We will update our website with the progression of our non profit. For all inquiry's and questions you may contact us at anytime at Admin@thecircleoflifesanctuary.org Please stay tuned for more updates, thank you for all your donations and support!</p>
+        <v-btn text absolute color="black">Learn More</v-btn>
+      </v-container>
+      <v-spacer></v-spacer>
+      <!--- Help Us -->
+      <v-container class="d-inline justify-center">
+        <h1 class="text-center">Help us Make a Difference!</h1>
+        <p class="text-center">We need to expand our space to help more animals. There are so many animals out there that we, as well as many other rescues facilities, cannot help due to the lack of space for them. At this time it is our goal to open a larger facility in order to help more animals in desperate need. We could use your help to really make a difference! </p>
+        <v-row class="align-center">
+          <v-col>
+            <v-btn text absolute color="black">Donation Link 1</v-btn>
+          </v-col>
+          <v-col>
+            <v-btn text absolute color="black">Donation Link 2</v-btn>
+          </v-col>
+        </v-row>
+        
+      </v-container>
+      <v-spacer></v-spacer>
+      <!--- Animal Spotlight -->
+      <v-container class="d-inline justify-center">
+        <h1 class="text-center">A Little About Us</h1>
+        <p class="text-center">We are an up and coming animal sanctuary based in Phoenix, Arizona striving to help all the animals we can. We are currently working with a limited capacity, but will continue to help every animal in any way possible. We will update our website with the progression of our non profit. For all inquiry's and questions you may contact us at anytime at Admin@thecircleoflifesanctuary.org Please stay tuned for more updates, thank you for all your donations and support!</p>
+        <v-btn text absolute color="black">Learn More</v-btn>
+      </v-container>
+      <v-spacer></v-spacer>
     </v-col>
   </v-row>
 </template>
-
+<style>
+.h1 {
+  text-align: center;
+}
+</style>
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
-
 export default {
-  components: {
-    Logo,
-    VuetifyLogo
+  layout: 'home',
+  // OR
+  layout (context) {
+    return 'home'
   }
 }
 </script>

@@ -1,35 +1,61 @@
 <template>
-    <v-app-bar
-        app
-        flat
-        color="green"
-    >
-        <v-container green align="left" padding="2px" class="py-0 fill-height">
-        <v-avatar
-          class="mr-10"
-          color="grey darken-1"
-          size="32"
-        ></v-avatar>
-            <v-btn to="/inspire">Inspire</v-btn>
-            <v-btn to="/inspire">Inspire</v-btn>
-            <v-btn to="/inspire">Inspire</v-btn>
-        
-
-        <v-spacer></v-spacer>
-
-        <v-responsive max-width="260">
-          <v-text-field
-            dense
-            flat
-            hide-details
-            rounded
-            solo-inverted
-          ></v-text-field>
-        </v-responsive>
-      </v-container>
-    </v-app-bar>
+  <v-app-bar fixed dark>
+    <v-row class="justify-center align-center" no-gutters>
+            <v-col class="d-inline-flex justify-start">
+              <v-btn nuxt icon>
+                <nuxt-link to="/" style="text-decoration: none;">
+                  <v-icon>
+                    mdi-home
+                  </v-icon>
+                </nuxt-link>
+              </v-btn>
+            </v-col>
+            <v-col class="d-inline-flex">
+              <v-btn nuxt text >
+                <nuxt-link to="/animals" style="text-decoration: none;">Adopt & Foster</nuxt-link>
+              </v-btn> 
+              <v-btn nuxt text>        
+                <nuxt-link to="/care&rescue" style="text-decoration: none;">Care & Rescue</nuxt-link>
+              </v-btn>
+              <v-btn nuxt text>        
+                <nuxt-link to="/sanctuary" style="text-decoration: none;">Sanctuary</nuxt-link>    
+              </v-btn>
+              <v-btn nuxt text>      
+                <nuxt-link to="/donate" style="text-decoration: none;">Donate</nuxt-link>         
+              </v-btn>
+              <v-btn nuxt text> 
+                <nuxt-link to="/blog" style="text-decoration: none;">Blog</nuxt-link>
+              </v-btn>
+            </v-col>
+            <v-col class="d-inline-flex justify-end">
+              <v-btn nuxt icon href="mailto:admin@thecircleoflifesanctuary.org" target="_blank">
+                    <v-icon>
+                      mdi-send
+                    </v-icon>
+              </v-btn>
+              <v-btn nuxt icon href="https://www.facebook.com" target="_blank">
+                    <v-icon>
+                      mdi-facebook
+                    </v-icon>
+              </v-btn>
+              <v-btn nuxt icon href="https://www.twitter.com" target="_blank">
+                    <v-icon>
+                      mdi-twitter
+                    </v-icon>
+              </v-btn>
+              <v-btn nuxt icon href="https://www.instagram.com" target="_blank">
+                    <v-icon>
+                      mdi-instagram
+                    </v-icon>
+              </v-btn>
+          </v-col>
+    </v-row>
+    
+  </v-app-bar>      
 </template>
+<style>
 
+</style>
 <script>
 export default {
     
