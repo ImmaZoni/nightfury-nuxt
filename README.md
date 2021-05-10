@@ -2,7 +2,7 @@
 
 **This is the private in development repository for The Circle of Life Animal Sanctuary**
 
-** [Current Live Development Server](https://nightfury-nuxt.herokuapp.com/)
+[Current Live Development Server](https://nightfury-nuxt.herokuapp.com/)
 
 ### Built With
 * [Vue.js](https://vuejs.org/)
