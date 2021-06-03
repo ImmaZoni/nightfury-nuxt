@@ -1,8 +1,8 @@
 <template>
-    <h1>CARE & RESCUE PAGE</h1>
+  <hero />
 </template>
 <script>
 export default {
-    
+
 }
 </script>

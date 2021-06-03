@@ -6,8 +6,8 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - nightfury-nuxt',
-    title: 'nightfury-nuxt',
+    titleTemplate: '%s - lightfury-nuxt',
+    title: 'lightfury-nuxt',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -20,7 +20,6 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '@/assets/global.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -28,19 +27,26 @@ export default {
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
-
+  components: {
+    dirs: [
+      '~/components',
+      '~/components/navigation'
+    ]
+  },
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    // https://go.nuxtjs.dev/eslint
+    '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/vuetify
-    '@nuxtjs/vuetify',
+    '@nuxtjs/vuetify'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
-    '@nuxt/content',
+    // https://go.nuxtjs.dev/content
+    '@nuxt/content'
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -50,22 +56,15 @@ export default {
     }
   },
 
+  // Content module configuration: https://go.nuxtjs.dev/config-content
+  content: {},
+
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      light: true,
-      dark: false,
+      dark: true,
       themes: {
-        light: {
-          primary: colors.blue.lighten2,
-          accent: colors.grey.lighten3,
-          secondary: colors.amber.lighten3,
-          info: colors.teal.darken1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3
-        },
         dark: {
           primary: colors.blue.darken2,
           accent: colors.grey.darken3,
