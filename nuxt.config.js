@@ -30,7 +30,9 @@ export default {
   components: {
     dirs: [
       '~/components',
-      '~/components/navigation'
+      '~/components/navigation',
+      '~/components/contents',
+      '~/components/global'
     ]
   },
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
@@ -55,9 +57,15 @@ export default {
       lang: 'en'
     }
   },
-
   // Content module configuration: https://go.nuxtjs.dev/config-content
-  content: {},
+  content: {
+    nestedProperties: [
+      'author.name',
+      'article.tags',
+      'tag.name',
+      'tag.slug'
+    ]
+  },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {

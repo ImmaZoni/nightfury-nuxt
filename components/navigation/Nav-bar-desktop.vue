@@ -2,12 +2,10 @@
   <v-app-bar fixed dark elevation="5">
     <v-row class="d-flex align-flex-auto">
       <v-col class="d-flex align-flex-auto">
-        <v-btn nuxt icon>
-          <nuxt-link to="/" style="text-decoration: none;">
-            <v-icon>
-              mdi-home
-            </v-icon>
-          </nuxt-link>
+        <v-btn nuxt icon to="/" style="text-decoration: none;">
+          <v-icon>
+            mdi-home
+          </v-icon>
         </v-btn>
       </v-col>
       <v-spacer />
