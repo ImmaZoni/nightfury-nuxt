@@ -2,25 +2,19 @@
   <div>
     <div>
       <img
-        :src="tag.img"
-        :alt="tag.name"
+        :src="articles[0].author.img"
+        :alt="articles[0].author.name"
       >
     </div>
-    <div>
-      <NuxtLink to="/">
-        <Logo />
-      </NuxtLink>
-      <div>
-        <div>
-          <h1>
-            {{ tag.name }}
-          </h1>
-          <p>
-            {{ tag.description }}
-          </p>
 
-          <nuxt-content :document="tag" />
-        </div>
+    <div>
+      <div>
+        <h1>
+          {{ articles[0].author.name }}
+        </h1>
+        <p>
+          {{ articles[0].author.bio }}
+        </p>
       </div>
     </div>
     <div>
@@ -32,7 +26,7 @@
         </p>
       </NuxtLink>
       <h3>
-        Articles tagged {{ tag.name }}:
+        Here are a list of articles by {{ articles[0].author.name }}:
       </h3>
       <ul>
         <li
@@ -49,9 +43,7 @@
             >
 
             <div>
-              <h2>
-                {{ article.title }}
-              </h2>
+              <h2>{{ article.title }}</h2>
               <p>{{ article.description }}</p>
               <p>
                 {{ formatDate(article.updatedAt) }}
@@ -67,18 +59,17 @@
 <script>
 export default {
   async asyncData ({ $content, params }) {
-    const tags = await $content('tags')
-      .where({ slug: { $contains: params.tag } })
-      .limit(1)
-      .fetch()
-    const tag = tags.length > 0 ? tags[0] : {}
     const articles = await $content('articles', params.slug)
-      .where({ tags: { $contains: tag.name } })
+      .where({
+        'author.name': {
+          $regex: [params.author, 'i']
+        }
+      })
+      .without('body')
       .sortBy('createdAt', 'asc')
       .fetch()
     return {
-      articles,
-      tag
+      articles
     }
   },
   methods: {

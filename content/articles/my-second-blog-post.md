@@ -1,12 +1,14 @@
 ---
-title: My 3rd Blog Post
+title: My second Blog Post
 description: Learning how to use @nuxt/content to create a blog
 img: first-blog-post.jpg
 alt: my first blog post
 author:
     name: Justin 
-    description: test
     bio: All about justin
     image: TempProfile.jpg
 ---
-lmao.
+# blah
+aaaa
+
+the end. 

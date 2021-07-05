@@ -27,14 +27,7 @@ export default {
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: {
-    dirs: [
-      '~/components',
-      '~/components/navigation',
-      '~/components/contents',
-      '~/components/global'
-    ]
-  },
+  components: true,
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/eslint
@@ -61,6 +54,8 @@ export default {
   content: {
     nestedProperties: [
       'author.name',
+      'author.img',
+      'author.bio',
       'article.tags',
       'tag.name',
       'tag.slug'
