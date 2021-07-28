@@ -1,10 +1,8 @@
 <template>
-  <div id="index-div">
+  <div>
     <hero />
     <v-container>
-      <about-us-summary />
-      <animal-spotlight />
-      <make-a-difference-summary />
+      <h1>HELLO THIS IS OUR BLOG</h1>
     </v-container>
   </div>
 </template>

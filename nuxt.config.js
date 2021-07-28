@@ -23,11 +23,15 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
+  plugins: ['~/plugins/global.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  components: [
+    '~/components/contents',
+    '~/components/navigation',
+    '~/components/global'
+  ],
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/eslint
@@ -50,25 +54,30 @@ export default {
       lang: 'en'
     }
   },
-  // Content module configuration: https://go.nuxtjs.dev/config-content
-  content: {
-    nestedProperties: [
-      'author.name',
-      'author.img',
-      'author.bio',
-      'article.tags',
-      'tag.name',
-      'tag.slug'
-    ]
-  },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
+    treeShake: false,
     theme: {
-      dark: true,
+      light: true,
+      dark: false,
       themes: {
+        light: {
+          background: colors.red,
+          backgroundsecondary: colors.blue,
+          backgroundthirdary: colors.green,
+          backgroundquadary: colors.yellow,
+          primary: colors.blue,
+          accent: colors.grey,
+          secondary: colors.green,
+          info: colors.teal,
+          warning: colors.orange,
+          error: colors.red,
+          success: colors.green
+        },
         dark: {
+          background: colors.white,
           primary: colors.blue.darken2,
           accent: colors.grey.darken3,
           secondary: colors.amber.darken3,
@@ -85,3 +94,4 @@ export default {
   build: {
   }
 }
+// nuxt.config.js

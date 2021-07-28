@@ -1,24 +1,53 @@
 <template>
-  <div>
-    <v-card-text id="about-us-summary">
-      <v-row
-        align="center"
-        class="mx-0"
-      >
-        <div class="my-4 text-h3">
-          A Little About Us
+  <v-card
+    class="mx-auto"
+    outlined
+  >
+    <v-list-item three-line>
+      <v-list-item-content>
+        <div class="text-overline mb-4">
+          ANIMAL SPOTLIGHT
         </div>
-      </v-row>
-      <div>
-        We are an up and coming animal sanctuary based in Phoenix, Arizona striving to help all the animals we can. We are currently working with a limited capacity, but will continue to help every animal in any way possible. We will update our website with the progression of our non profit. For all inquiry's and questions you may contact us at anytime at Admin@thecircleoflifesanctuary.org
+        <v-list-item-title class="text-h5 mb-1">
+          {{ animal.name }}
+        </v-list-item-title>
+        <v-list-item-subtitle>{{ animal.description }}</v-list-item-subtitle>
+      </v-list-item-content>
+      <v-list-item-avatar
+        color="grey"
+      >
+        <v-img :src="TempProfile" />
+      </v-list-item-avatar>
+    </v-list-item>
 
-        Please stay tuned for more updates, thank you for all your donations and support!
-      </div>
-    </v-card-text>
-    <v-card-actions>
-      <v-btn nuxt to="/about-us">
-        Learn More!
+    <v-card-actions class="d-flex justify-center">
+      <v-btn
+        color="primary"
+        nuxt
+        :to="animal.url"
+        style="text-decoration: none;"
+      >
+        Learn More About {{ animal.name }}
       </v-btn>
     </v-card-actions>
-  </div>
+  </v-card>
 </template>
+<script>
+export default {
+  data () {
+    return {
+      animal: {
+        name: 'Athena',
+        description: 'Athena is our kitty!',
+        profile: 'profile is here',
+        url: '/animals/athena'
+      }
+    }
+  },
+  computed: {
+    TempProfile () {
+      return 'TempProfile.jpg'
+    }
+  }
+}
+</script>
