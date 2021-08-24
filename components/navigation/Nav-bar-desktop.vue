@@ -40,6 +40,7 @@
           </v-icon>
         </v-btn>
       </v-col>
+      <v-col />
     </v-row>
   </v-app-bar>
 </template>

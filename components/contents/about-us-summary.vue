@@ -2,7 +2,6 @@
   <v-card
     align="center"
     class="mx-auto pa-5"
-    color="backgroundsecondary"
     outlined
   >
     <v-list-item three-line>
